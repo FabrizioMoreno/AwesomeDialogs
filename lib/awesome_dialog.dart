@@ -326,6 +326,14 @@ class AwesomeDialog {
                   dismiss();
                   btnOkOnPress?.call();
                 }
+              }else{
+                if (event.isKeyPressed(LogicalKeyboardKey.escape)) {
+                  if (btnCancel == null && btnCancelOnPress != null) {
+                    _dismissType = DismissType.btnCancel;
+                    dismiss();
+                    btnCancelOnPress?.call();
+                  }
+                }
               }
             },
             child: child,
